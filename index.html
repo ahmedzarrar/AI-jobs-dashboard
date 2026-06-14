@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Impact on Jobs 2030 — DSC327</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="header-left">
+      <span class="eyebrow">DSC327 · Data Visualization Techniques</span>
+      <h1>AI Impact on <em>Jobs</em> 2030</h1>
+      <p class="subtitle">Exploring automation risk, salary trends, and workforce futures across industries and countries.</p>
+    </div>
+    <div class="kpi-strip">
+      <div class="kpi"><span class="kpi-val" id="kpi-total">—</span><span class="kpi-label">Records</span></div>
+      <div class="kpi"><span class="kpi-val" id="kpi-industries">—</span><span class="kpi-label">Industries</span></div>
+      <div class="kpi"><span class="kpi-val" id="kpi-countries">—</span><span class="kpi-label">Countries</span></div>
+      <div class="kpi"><span class="kpi-val" id="kpi-risk">—</span><span class="kpi-label">Avg AI Risk</span></div>
+      <div class="kpi"><span class="kpi-val" id="kpi-salary">—</span><span class="kpi-label">Avg Salary</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- FILTER BAR -->
+<section class="filter-bar">
+  <div class="filter-bar-inner">
+    <span class="filter-label">Filter:</span>
+    <div class="filter-group"><label for="f-industry">Industry</label>
+      <select id="f-industry"><option value="All">All Industries</option></select></div>
+    <div class="filter-group"><label for="f-country">Country</label>
+      <select id="f-country"><option value="All">All Countries</option></select></div>
+    <div class="filter-group"><label for="f-education">Education</label>
+      <select id="f-education"><option value="All">All Levels</option></select></div>
+    <div class="filter-group"><label for="f-automation">Automation</label>
+      <select id="f-automation"><option value="All">All Levels</option></select></div>
+    <div class="filter-group"><label for="f-remote">Remote Work</label>
+      <select id="f-remote"><option value="All">All Types</option></select></div>
+    <div class="filter-group"><label for="f-hiring">Hiring Trend</label>
+      <select id="f-hiring"><option value="All">All Trends</option></select></div>
+    <button class="btn-reset" id="btnReset">↺ Reset</button>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<main class="dashboard">
+  <div class="card card-donut">
+    <div class="card-header"><h2>AI Replacement Risk</h2><span class="card-tag">Distribution</span></div>
+    <div class="chart-wrap" id="chart-donut"></div>
+    <div class="legend" id="legend-donut"></div>
+  </div>
+
+  <div class="card card-industry">
+    <div class="card-header"><h2>Avg AI Risk by Industry</h2><span class="card-tag">Top 12 · Sorted</span></div>
+    <div class="chart-wrap" id="chart-industry"></div>
+  </div>
+
+  <div class="card card-scatter">
+    <div class="card-header"><h2>Salary vs AI Replacement Risk</h2><span class="card-tag">Scroll to zoom · Drag to pan · Colored by Automation Level</span></div>
+    <div class="chart-wrap" id="chart-scatter"></div>
+  </div>
+
+  <div class="card card-edu">
+    <div class="card-header"><h2>Salary by Education Level</h2><span class="card-tag">Mean vs Median</span></div>
+    <div class="chart-wrap" id="chart-education"></div>
+  </div>
+
+  <div class="card card-hiring">
+    <div class="card-header"><h2>Job Growth 2030 by Hiring Trend</h2><span class="card-tag">Box Plot</span></div>
+    <div class="chart-wrap" id="chart-hiring"></div>
+  </div>
+
+  <div class="card card-stacked">
+    <div class="card-header"><h2>Upskilling Need by Automation Level</h2><span class="card-tag">Stacked Bar</span></div>
+    <div class="chart-wrap" id="chart-stacked"></div>
+  </div>
+
+  <div class="card card-heatmap">
+    <div class="card-header"><h2>Avg Salary Heatmap</h2><span class="card-tag">Education × Remote Work</span></div>
+    <div class="chart-wrap" id="chart-heatmap"></div>
+  </div>
+
+  <div class="card card-sat">
+    <div class="card-header"><h2>Job Satisfaction by Remote Work</h2><span class="card-tag">Box Plot</span></div>
+    <div class="chart-wrap" id="chart-satisfaction"></div>
+  </div>
+
+  <div class="card card-bubble">
+    <div class="card-header"><h2>Experience vs Future Demand</h2><span class="card-tag">Bubble = Avg Salary</span></div>
+    <div class="chart-wrap" id="chart-bubble"></div>
+  </div>
+
+  <div class="card card-country">
+    <div class="card-header"><h2>AI Risk &amp; Job Growth by Country</h2><span class="card-tag">Dual Axis · Top 15 by AI Risk</span></div>
+    <div class="chart-wrap" id="chart-country"></div>
+  </div>
+</main>
+
+<div class="tooltip" id="tooltip"></div>
+
+<footer>
+  <span>DSC327 · Lab Terminal Project · BDS 6 · Dataset: AI Impact on Jobs 2030</span>
+  <span>Built with D3.js v7</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
