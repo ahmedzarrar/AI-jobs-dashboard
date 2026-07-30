@@ -2,7 +2,7 @@
 ### DSC327 · Data Visualization Techniques · BDS 6
 
 ## Live Demo
-🔗 [View Dashboard](https://github.com/ahmedzarrar/AI-jobs-dashboard)
+🔗 [View Dashboard](https://ahmedzarrar.github.io/AI-jobs-dashboard/)
 
 ---
 
